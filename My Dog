@@ -1,0 +1,49 @@
+import java.util.Scanner;
+class Dog{
+	int size;
+	String name;
+	void bark(int howMuch){
+			while(howMuch > 0){
+			if(size > 60){
+				System.out.println("Gaf Gaf Gaf");
+			}else if(size > 17){
+				System.out.println("Hav Hav Hav");
+			}else{
+				System.out.println("Tyaf Tyaf Tyaf");
+			}
+			howMuch = howMuch - 1;
+		}
+	}
+	
+}
+
+
+public class DogTestDrive {
+	
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		System.out.println("How much dogs should to bark?");
+		int howMuchDogsMustBark = in. nextInt();
+		
+		Dog myDogRay = new Dog();
+		myDogRay.size = 25;
+		myDogRay.name = "Ray";
+		
+		Dog myDogArchy = new Dog();
+		myDogArchy.size = 65;
+		myDogArchy.name = "Archy";
+		
+		Dog myDogJoly = new Dog();
+		myDogJoly.size = 12;
+		myDogJoly.name = "Joly";
+		for(int i = 0; i < howMuchDogsMustBark; i++ ){
+			int j = 1;
+		myDogRay.bark(j);
+		myDogArchy.bark(j);
+		myDogJoly.bark(j);
+		System.out.println("---------------");
+		}
+		
+	}
+
+}
