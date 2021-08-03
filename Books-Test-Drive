@@ -1,0 +1,33 @@
+
+class Books{
+	String title;
+	String author;
+}
+
+
+
+public class BooksTestDrive {
+	
+	public static void main(String[] arges){
+			
+			
+			Books[] myBooks = new Books[3]; 
+			myBooks[0] = new  Books();
+			myBooks[1] = new  Books();
+			myBooks[2] = new  Books();
+			
+			myBooks[0].title = "1984";
+			myBooks[1].title = "The kind of loving";
+			myBooks[2].title = "Alchemist";
+			
+			myBooks[0].author = "George Orwell";
+			myBooks[1].author = "Stan Barstow";
+			myBooks[2].author = "Paulo Coelhio";
+			
+			for(int i = 0; i < myBooks.length; i++){
+				System.out.println("Title: " + myBooks[i].title + " author: " + myBooks[i].author );
+			}
+			
+			
+	}
+}
