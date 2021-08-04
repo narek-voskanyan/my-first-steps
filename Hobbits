@@ -1,0 +1,20 @@
+public class Hobbits {
+
+	String name;
+	public static void main(String[] args) {
+		
+		Hobbits[] bestHobbits = new Hobbits[3];
+		for(int i = 0; i < bestHobbits.length; i++){
+			bestHobbits[i] = new Hobbits();
+			if(i == 0){
+				bestHobbits[i].name = "Frodo";
+			}else if(i == 1){
+				bestHobbits[i].name = "Bilbo";
+			}else{
+				bestHobbits[i].name = "Sam";
+			}
+			System.out.println("Hobbit`s name is - " + bestHobbits[i].name );
+		}
+	}
+
+}
