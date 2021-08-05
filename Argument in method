@@ -1,0 +1,24 @@
+import java.util.Scanner;
+class TestStuff{
+	void takeTwo(int z){
+		if(z < 18){
+			System.out.println("You are so young, access is denied. \n Return when you will be older 18");
+		}else{
+			System.out.println("Your age 18 or older you can come in");
+		}
+	
+	}
+}
+
+
+public class SendMethodValue {
+	
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		System.out.println("Enter your age please");
+		TestStuff tester = new TestStuff();
+		int age = in.nextInt();
+		tester.takeTwo(age);
+	}
+
+}
