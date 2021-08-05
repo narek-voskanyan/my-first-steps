@@ -1,0 +1,23 @@
+import java.util.Scanner;
+class TestStuff{
+	void takeTwo(int x, int y ){
+		int z = x + y;
+		System.out.println("the sum of integers = " + z );
+	}
+}
+
+
+public class SendMethodValue {
+	
+	public static void main(String[] args) {
+		
+		TestStuff tester = new TestStuff();
+		Scanner in = new Scanner(System.in);
+		System.out.println("Enter first integer please");
+		int firstNumber = in.nextInt(); 
+		System.out.println("Enter second integer please");
+		int secondNumber = in.nextInt(); 
+		tester.takeTwo(firstNumber,secondNumber);
+	}
+
+}
