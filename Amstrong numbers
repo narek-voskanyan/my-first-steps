@@ -1,0 +1,28 @@
+import java.util.Scanner;
+public class AmstrongNumbers {
+
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		System.out.println("Enter Integer please");
+		int testNumber = in.nextInt();
+		int forLoop = testNumber ;
+		int forSum = 0 ;
+		int sumOfSymbol = 0;
+		while(forLoop != 0){
+			forLoop /= 10;
+			sumOfSymbol++;
+		}
+		forLoop = testNumber ;
+			while(forLoop != 0){
+				forSum += (int) Math.pow((forLoop % 10), sumOfSymbol);
+				forLoop /= 10;
+			}
+			if(forSum == testNumber){
+				System.out.println("It is Amstrong number ");
+			}else{
+				System.out.println("It is not Amstrong number");
+			}
+			
+	}
+
+}
