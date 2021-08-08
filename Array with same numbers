@@ -1,0 +1,28 @@
+import java.util.Scanner;
+public class CommonValueArray {
+
+	public static void main(String[] args) {
+  //Write a program that will check all numbers are that are the same, or not.
+		Scanner in= new Scanner(System.in);
+		System.out.println("Enter please how much integer you are going to enter");
+		int arrayLength = in.nextInt();
+		int[] numberColection = new int[arrayLength];
+		boolean chcker = true;
+		for(int i = 0; i < numberColection.length ; i++){
+			System.out.println("Enter the integer please");
+			numberColection[i] = in.nextInt();
+		}
+		System.out.println("Etner the check number please ");
+		int checkerNumber = in.nextInt();
+		for(int i = 0; i < numberColection.length ; i++){
+			if(numberColection[i] != checkerNumber){
+				System.out.println("False");
+				chcker = false;
+				break;
+			}
+		}
+		if(chcker){
+			System.out.println("True");
+		}
+	}
+}
