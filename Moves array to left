@@ -1,0 +1,30 @@
+import java.util.Scanner;
+public class MoveArray {
+
+	public static void main(String[] args) {
+		Scanner in= new Scanner(System.in);
+		// Move array left how much want user
+		int[] arrayOne = {6,2,5,3,7,11,45};
+		int[] arrayTwo = new int[arrayOne.length];
+		
+		//takes the parameters for operation
+		System.out.println("Enter please how much you want  move array to  left ");
+		int nuberForMove = in.nextInt();
+		int forchoseenArrayPosition = arrayTwo.length-nuberForMove;
+		int forFirstPositionFirstArray = 0;
+		//move right part of array to left
+		
+		System.arraycopy(arrayOne,nuberForMove, arrayTwo, 0 , arrayOne.length-nuberForMove);
+		
+		//move left part of array to end of array
+		for(int i = 0; i < nuberForMove; i++){
+			arrayTwo[forchoseenArrayPosition] = arrayOne[forFirstPositionFirstArray];
+			forchoseenArrayPosition++;
+			forFirstPositionFirstArray++;
+		}
+		//prints array
+		for(int i = 0; i < arrayOne.length; i++ ){
+			System.out.print(arrayTwo[i] + ",  ");
+		}	
+	}
+}
