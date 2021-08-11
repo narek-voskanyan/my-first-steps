@@ -1,0 +1,27 @@
+import java.util.Scanner;
+public class Fibonacci {
+
+
+	public static void main(String[] args) {
+
+		//Exercise 3
+		//Write a program to print Fibonacci series of n terms, where n is input by user.
+		Scanner in = new Scanner(System.in);
+		System.out.println("Enter how much Fibonacci's number you would like to see");
+		
+		int lengthOfArrayEx3 = in.nextInt();
+		int[] fibArray = new int[lengthOfArrayEx3];
+		fibArray[0] = 0;
+		fibArray[1]= 1;
+		for(int i = 2; i < fibArray.length; i++ ){
+			fibArray[i] = fibArray[i-1] + fibArray[i-2];
+		}
+		System.out.println("It is Fibonacci's numbers ");
+		for(int i = 0; i < fibArray.length; i++){
+			System.out.print(fibArray[i] + ", ");
+		}
+		System.out.print( "\n ");
+
+	}
+
+}
