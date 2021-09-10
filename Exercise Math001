@@ -1,0 +1,234 @@
+
+
+import java.util.Scanner;
+
+public class Main {
+
+
+	public static void main(String[] args) {
+		
+		//ExerciseSeven automorphic = new ExerciseSeven();
+		//automorphic.setAutomorphic();
+		
+		//ExerciseSix pronic = new ExerciseSix();
+		//pronic.setPronic();
+		
+		//ExerciseFive harshad = new ExerciseFive();
+		//harshad.setHarshad();
+		
+		//ExerciseFour Disarium = new ExerciseFour();
+		//Disarium.setDisarium();
+		
+		//ExerciseThree  lucas = new ExerciseThree();
+		//lucas.setLucas();
+		
+		//ExerciseTwo umstrong = new ExerciseTwo();
+		//umstrong.setUmstrong();
+		
+		//ExerciseOne firstEx = new ExerciseOne();
+		//firstEx.setInteger();
+		
+		
+	}
+
+}
+ class ExerciseSeven {
+	
+	Scanner in = new Scanner(System.in);
+	private	long forCheckNumber;
+	private int sumOfElements;
+	private int forLoop;
+	
+	public void setAutomorphic(){
+		
+		System.out.println("Enter the integer for ckeck it");
+		int fromUser = in.nextInt();
+		forCheckNumber = (long)Math.pow(fromUser, 2);
+		forLoop = fromUser;
+		in.close();
+		while(forLoop != 0){
+			sumOfElements ++;
+			forLoop /= 10;
+		}
+		
+		forLoop = 1;
+		while(sumOfElements != 0){
+			forLoop *= 10;
+			sumOfElements -- ;
+		}
+		if(fromUser == (forCheckNumber % forLoop) ){
+			System.out.println("It is Automorphic number: " + forCheckNumber);
+		}else{
+			System.out.println("It is Not Automorphic number: " + forCheckNumber);
+		}
+	}
+	
+}
+ class ExerciseSix {
+		
+		private int forSum;
+		private int a;
+		private int b = 1;
+		private boolean checker = true;
+		private int fromUser;
+		Scanner in = new Scanner(System.in);
+		
+		public void setPronic(){
+			
+			System.out.println("Enter the integer for ceck it ");
+			fromUser = in.nextInt();
+			
+			while(forSum <= fromUser){
+				forSum = a * b;
+				a++;
+				b++;
+				if( forSum == fromUser ){
+					System.out.println("It is Pronic number: " + fromUser);
+					checker = false;
+					break;	
+				}	
+			}
+			if(checker){
+				System.out.println("It is NOT Pronic number: " + fromUser );
+			}
+			
+			
+		}
+	}
+
+class ExerciseFive {
+		
+		private int forCheckNumber;
+		private int fromUser;
+		private int forDivis;
+		Scanner in = new Scanner(System.in);
+		
+		public void setHarshad(){
+			
+			System.out.println("Enter integer for check");
+			fromUser = in.nextInt();
+			forCheckNumber = fromUser;
+			in.close();
+			while(forCheckNumber !=0 ){
+				forDivis += (forCheckNumber % 10);
+				forCheckNumber /= 10;
+			}
+			
+			if((fromUser % forDivis) == 0){
+				System.out.println("It is Harshad number: " + fromUser);
+			}else{
+				System.out.println("It is NOT Harshad number: " + fromUser);
+			}
+		} 
+	}
+
+ class ExerciseFour {
+	private int numForCheck;
+	private int forDis;
+	private int forSum;
+	private short powNum;
+	private int forCheckPow;
+	Scanner in = new Scanner(System.in);
+
+	public  void setDisarium(){
+		
+		System.out.println("Enter the integer please");
+		numForCheck = in.nextInt();
+		forDis = numForCheck;
+		forCheckPow = numForCheck;
+		
+		while(forCheckPow != 0){
+			powNum ++;
+			forCheckPow /= 10;
+		}
+		
+		while(numForCheck !=0 ){
+			forSum += (int)(Math.pow((numForCheck % 10), powNum ));
+			numForCheck /= 10;
+			powNum --;
+			in.close();
+		}
+		
+		if(forDis == forSum){
+			System.out.println("It is Disarium number: " + forSum);
+		}else{
+			System.out.println("It is NOT Disarium number: " + forSum);
+		}
+	} 
+}
+
+class ExerciseThree {
+		
+		public void setLucas(){
+			int[] lucas = new int[10];
+			lucas[0] = 2;
+			lucas[1] = 1;
+			System.out.println("It is Lucus numbers");
+			for(int i = 2; i < lucas.length; i++){
+				lucas[i] = lucas[i-1] + lucas[i-2];
+			}
+			for(int i = 0; i < lucas.length; i++){
+				System.out.print(lucas[i] + " ");
+			}
+			System.out.println("\n");
+			
+		}
+	}
+
+class ExerciseTwo {
+	
+	private	int fromUserFroUmstrong;
+	private	int forRow;
+	private	int forCheckUmstrongNumber;
+	
+	public void setUmstrong(){
+		System.out.println("It is Umstrong numbers");
+		fromUserFroUmstrong = 0;
+		short a = 0;
+		short powNumber = 0;
+		int forRow = 0;
+		while(a < 15){
+			forRow = fromUserFroUmstrong;
+			
+			powNumber = 0;
+			while(forRow != 0){
+				forRow = forRow / 10;
+				powNumber ++;
+			}
+			
+			forRow = fromUserFroUmstrong;
+			forCheckUmstrongNumber = 0;
+			while(forRow != 0){
+				forCheckUmstrongNumber += (int)(Math.pow((forRow % 10), powNumber));
+				forRow /= 10;
+			}
+			if(forCheckUmstrongNumber == fromUserFroUmstrong){
+				a ++;
+				System.out.print(forCheckUmstrongNumber + " ");
+				
+				
+			}
+			fromUserFroUmstrong ++;
+		}
+		System.out.print("\n");
+		
+	}
+
+}
+ class ExerciseOne {
+	
+	 private int forRung;
+	 private int forResult;
+	Scanner in = new Scanner(System.in);
+	
+	public void setInteger(){
+	
+		System.out.println("Enter the integer for runge");
+		forRung = in.nextInt();
+		in.close();
+		forResult = (int)(Math.random() * (forRung + 1) );
+		System.out.println(forResult);
+		
+	}
+		
+}
