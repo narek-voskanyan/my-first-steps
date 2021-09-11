@@ -1,0 +1,60 @@
+package ExerciseForTraning;
+
+public class ExerciseTen implements forScanner {
+	
+	private int fromUser;
+	private int forCheck;
+	private int[] forNumber;
+	private short multiplier = 1;
+	private short sumOfNumber;
+	private boolean checker = false;
+	
+	public void setCyclicNumber(){
+		
+		System.out.println("Eter the number please");
+		fromUser = in.nextInt();
+		in.close();
+		forCheck = fromUser;
+		
+		while(forCheck !=0){
+			sumOfNumber ++;
+			forCheck /= 10;
+		}
+		forCheck = fromUser;
+		forNumber = new int[sumOfNumber];
+		
+		for(int i = 0; i < sumOfNumber; i++){
+			forNumber[i] = (forCheck % 10);
+			forCheck /= 10;
+		}
+		
+		
+		for(int i  = 0; i < sumOfNumber; i++){
+			forCheck = fromUser;
+			forCheck *= multiplier;
+			
+			for(int j = 0; j < sumOfNumber; j++){
+				checker = false;
+				if(forNumber[i] == (forCheck % 10)){
+					checker = true;
+					break;
+				}
+				forCheck /= 10;
+			}
+			multiplier++;
+			if(multiplier == 7){
+				break;
+			}
+		}
+		if(checker){
+			
+		System.out.println("it is Cycrcle number");
+		
+		}else{
+			
+			System.out.println("it is Not Cycrcle number");
+		}
+		
+	}
+
+}
