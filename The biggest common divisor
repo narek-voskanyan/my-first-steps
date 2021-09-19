@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class CommonDivisor {
+
+
+	public static void main(String[] args) {
+		Divisor div = new Divisor();
+		div.setDivisor();
+		
+	}
+
+}
+class Divisor{
+	private int firstInt;
+	private int secondInt;
+	private int divsiorInt;
+	Scanner in = new Scanner(System.in);
+	public void setDivisor(){
+		
+		System.out.println("Enter first number please");
+		firstInt = in.nextInt();
+		
+		System.out.println("Enter second number please");
+		secondInt = in.nextInt();
+		
+		for(int i = 1; i <= (firstInt > secondInt? secondInt/2 : firstInt/2); i++){
+			if((firstInt % i == 0) && (secondInt % i == 0)){
+				divsiorInt = i;
+			}
+		}
+		System.out.println("The biggest common divisor for this two integers is " + divsiorInt);
+	}
+}
