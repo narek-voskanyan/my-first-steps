@@ -1,0 +1,57 @@
+import java.util.Scanner;
+public class Demo {
+
+
+	public static void main(String[] args) {
+		AmicableNumbers num = new AmicableNumbers();
+		num.checker();
+	}
+
+}
+
+class AmicableNumbers{
+	Scanner in = new Scanner(System.in);
+	
+	private int firstInt;
+	private int secondInt;
+	private int forFirstDivisor;
+	private int forSecondDivisor;
+	
+	public void checker(){
+		
+		System.out.println("Enter firs number please");
+		firstInt = in.nextInt();
+		
+		System.out.println("Enter second number please");
+		secondInt = in.nextInt();
+	
+		while(true){
+			if(secondInt == firstInt){
+				System.out.println("the numbers are equals equal each other please enter other number");
+				secondInt = in.nextInt();
+				continue;
+			}else{
+				break;
+			}
+		}
+		in.close();
+		
+		for(int i = 1; i <= firstInt/2; i++){
+			if(firstInt % i == 0){
+				forFirstDivisor += i;
+			}
+		}
+		
+		for(int i = 1; i <= secondInt/2; i++){
+			if(secondInt % i == 0){
+				forSecondDivisor += i;
+			}
+		}
+		
+		if(forSecondDivisor == firstInt || forFirstDivisor == secondInt ){
+			System.out.print("This numbers is Amicable numbers " + forFirstDivisor + ": " + forSecondDivisor);
+		}else{
+			System.out.print("This numbers is NOT Amicable numbers " + forSecondDivisor + ": " + forFirstDivisor);
+		}
+	}
+}
