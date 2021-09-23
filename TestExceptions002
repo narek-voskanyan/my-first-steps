@@ -1,0 +1,31 @@
+package ExerciseInFrage;
+
+import javax.security.sasl.SaslException;
+
+public class TryCatchAndFinally {
+
+	public static void main(String[] args) {
+		String test = "yes";
+		try{
+			System.out.println("start try");
+			doRisky(test);
+			System.out.println("end try");
+		}catch(SaslException es){
+			System.out.println("scary exception");
+		}finally{
+			System.out.println("finally");
+		}
+		System.out.println("end of main");
+	}
+	
+	
+	static void doRisky(String testOne) throws SaslException{
+		System.out.println("risky method start");
+		if("yes".equals(testOne)){
+			throw new SaslException();
+		}
+		System.out.println("end of risky method");
+		return;
+	}
+
+}
