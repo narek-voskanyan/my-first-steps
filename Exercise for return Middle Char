@@ -1,0 +1,34 @@
+import java.util.Scanner;
+public class MiddleChar {
+
+	
+	public static void main(String[] args) {
+		FoundMiddleChar midChar = new FoundMiddleChar();
+		midChar.setChar();
+	}
+
+}
+class FoundMiddleChar{
+	private String fromUser;
+	private String forResult;
+	int strSize;
+	Scanner in = new Scanner(System.in);
+	
+	public void setChar(){
+		System.out.println("Enter the text please");
+		fromUser = in.nextLine();
+		
+		strSize = fromUser.length();
+		
+		if(strSize % 2 !=0){
+			
+		forResult = "" + fromUser.charAt(strSize/2);
+		System.out.println(forResult);
+		
+		}else{
+			
+			forResult = fromUser.substring((strSize/2)-1, (strSize/2)+1);
+			System.out.println(forResult);
+		}
+	}
+}
