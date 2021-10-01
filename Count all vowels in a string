@@ -1,0 +1,38 @@
+import java.util.Scanner;
+public class VowelsCount {
+
+
+	public static void main(String[] args) {
+		
+		CountCharacters counter = new CountCharacters();
+		counter.setVowelCount();
+
+	}
+}
+
+class CountCharacters{
+	
+	private String fromUser;
+	private char check;
+	private int vowelsSum;
+	
+	Scanner in = new Scanner(System.in);
+	
+	public void setVowelCount(){
+		
+		System.out.println("Enter the text please");
+		fromUser = in.nextLine();
+		fromUser = fromUser.toLowerCase();
+		
+		for(int i = 0; i < fromUser.length(); i++){
+			
+			check = fromUser.charAt(i);
+		
+			if(check == 'a' || check == 'e' || check == 'i' || check == 'o' || check == 'u' ){
+				vowelsSum ++;
+			}
+		}
+		
+		System.out.println("there are " + vowelsSum + " vowels  in this string");
+	}
+}
