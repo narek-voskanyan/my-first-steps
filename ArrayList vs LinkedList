@@ -1,0 +1,80 @@
+import java.util.LinkedList;
+import java.util.ArrayList;
+
+public class TaskForLinkedListVsArrayList {
+
+	
+	public static void main(String[] args) {
+		
+		TaskForLinkedListVsArrayList testOne = new TaskForLinkedListVsArrayList();
+		testOne.createMilionLinkedList();
+		
+		TaskForLinkedListVsArrayList testTwo = new TaskForLinkedListVsArrayList();
+		testTwo.createMilionArrayList();
+		
+	}
+	
+	
+	
+	//EXAMPLE BY LINKEDLIST
+	public void createMilionLinkedList(){
+		
+		LinkedList<Students> exampleByList = new LinkedList<Students>();
+		
+		for(int i = 0; i < 1000000; i++){
+			exampleByList.addFirst(new Students());
+		}		 
+	}
+	
+	
+	//EXAMPLE BY ARRAYLIST
+	public void createMilionArrayList(){
+		
+		ArrayList<Students> exampleByArray = new ArrayList<Students>(1000000);
+		
+		for(int i = 0; i < 1000000; i++){
+			exampleByArray.add(new Students());
+		}
+	}
+	
+
+}
+
+
+class Students{
+	
+	Students(){
+		
+		getAge();
+		getName();
+	}
+	
+	private String name;
+	private int age;
+	
+	public int getAge(){
+		int age = 18;
+		this.age = age + (int)(Math.random() * 7);
+		return this.age;
+	}
+	
+	public String getName(){
+		String name = "";
+		String allLetters = "abcdefghijklmnopqrstuvwxyz";
+		int nameLength = 3;
+		int forLetter = 0;
+		
+		nameLength += (int)(Math.random() * 8);
+		
+		for(int i = 0; i < nameLength; i++ ){
+			
+			forLetter = (int)(Math.random() * allLetters.length());
+			name += allLetters.charAt(forLetter); 
+			   
+		}
+		
+		this.name = name;
+		return this.name;
+	}
+	
+}
