@@ -5,12 +5,16 @@ public class TaskForLinkedListVsArrayList {
 
 	
 	public static void main(String[] args) {
+		long m = System.currentTimeMillis();
 		
 		TaskForLinkedListVsArrayList testOne = new TaskForLinkedListVsArrayList();
-		testOne.createMilionLinkedList();
 		
-		TaskForLinkedListVsArrayList testTwo = new TaskForLinkedListVsArrayList();
-		testTwo.createMilionArrayList();
+		testOne.createMilionLinkedList();
+		testOne.createMilionArrayList();
+		
+		
+		
+		System.out.println((double) (System.currentTimeMillis() - m));
 		
 	}
 	
