@@ -12,12 +12,9 @@ public class TaskForLinkedListVsArrayList {
 		testOne.createMilionLinkedList();
 		testOne.createMilionArrayList();
 		
-		
-		
 		System.out.println((double) (System.currentTimeMillis() - m));
 		
 	}
-	
 	
 	
 	//EXAMPLE BY LINKEDLIST
@@ -77,7 +74,7 @@ class Students{
 			   
 		}
 		
-		this.name = name;
+		this.name = name.substring(0,1).toUpperCase() + name.substring(1);
 		return this.name;
 	}
 	
