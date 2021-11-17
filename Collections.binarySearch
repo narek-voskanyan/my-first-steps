@@ -1,0 +1,20 @@
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+			ArrayList<String> myFriends = new ArrayList<String>();
+		
+		myFriends.add("Anag");
+		myFriends.add("Davo");
+		myFriends.add("Gven");
+		myFriends.add("Mayis");
+		Collections.sort(myFriends);
+		String aro = "Aro";
+		int num = Collections.binarySearch(myFriends, aro);
+		if(num < 0){
+		    myFriends.add(-num-1, aro);
+		}
+		System.out.println(myFriends);
+	}
+}
