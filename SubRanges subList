@@ -1,0 +1,17 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+			ArrayList<String> myFriends = new ArrayList<String>();
+		
+		myFriends.add("Anag");
+		myFriends.add("Davo");
+		myFriends.add("Gven");
+		myFriends.add("Mayis");
+		Collections.sort(myFriends);
+		List<String> piseOf = myFriends.subList(0,3);
+		System.out.println(piseOf);
+		piseOf.clear();
+		System.out.println(myFriends);
+	}
+}
