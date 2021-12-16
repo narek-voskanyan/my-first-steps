@@ -16,12 +16,9 @@ public class CountAllWorlds15_12_21 {
 }
 class Counter{
 	public static int worldCount(String a){
-		int worlds = 1;
+		int worlds = 0;
 		char myChar = 'a';
 		
-		if(a.length() == 0){
-			return 0;
-		}
 		
 		for(int i = 0; i < a.length() -1; i++){
 			if(a.charAt(i) == ' '){
@@ -32,10 +29,12 @@ class Counter{
 			if(myChar == ' ' && a.charAt(i+1) != ' '){
 				worlds ++;
 				
+				}
 			}
-			}
+			worlds++;
 			break;
 		}
 		return worlds;
 	}
 }
+
