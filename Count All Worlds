@@ -1,0 +1,41 @@
+import java.util.Scanner;
+public class CountAllWorlds15_12_21 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		Scanner in = new Scanner(System.in);
+		System.out.println("Enter your text ");
+		String fromUser = in.nextLine();
+		System.out.println(Counter.worldCount(fromUser));
+		
+	}
+
+}
+class Counter{
+	public static int worldCount(String a){
+		int worlds = 1;
+		char myChar = 'a';
+		
+		if(a.length() == 0){
+			return 0;
+		}
+		
+		for(int i = 0; i < a.length() -1; i++){
+			if(a.charAt(i) == ' '){
+				continue;
+			}
+			for(; i < a.length()-1; i++){
+			myChar = a.charAt(i);
+			if(myChar == ' ' && a.charAt(i+1) != ' '){
+				worlds ++;
+				
+			}
+			}
+			break;
+		}
+		return worlds;
+	}
+}
