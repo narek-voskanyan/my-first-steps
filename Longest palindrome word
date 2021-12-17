@@ -1,0 +1,43 @@
+//Write a method that returns the longest palindrome substring of a given string.
+
+import java.util.Scanner;
+public class PalindromeString {
+
+	
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		System.out.println("Enter the string");
+		String fromUser = in.nextLine();
+		in.close();
+		LongestPalindrome test = new LongestPalindrome();
+		System.out.println(test.palindromeFound(fromUser));	
+	}
+}
+
+
+class  LongestPalindrome{
+	
+	public String palindromeFound(String a){
+		String word = "";
+		String longestWord = "";
+		int forLoop = 0;
+		
+		for(String b : a.split(" ")){
+			forLoop = b.length()-1;
+			
+			while(forLoop >= 0){
+				word = word + b.charAt(forLoop);
+				forLoop --;
+			}
+			
+			if(word.equals(b)){
+				if(longestWord.length() < word.length()){
+					longestWord = word;
+				}
+			}
+			word = "";
+		}
+		
+		return longestWord;
+	}
+}
