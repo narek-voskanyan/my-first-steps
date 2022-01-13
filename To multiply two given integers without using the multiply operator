@@ -1,7 +1,8 @@
 
+
 import java.util.Scanner;
-public class ArrayTest002 {
-	//Write a Java program to multiply two given integers without using the multiply operator
+public class ArrayTest001 {
+	
 	
 	public static void main(String[] args) {
 		
@@ -26,7 +27,7 @@ class Multyplay{
 	}
 	
 	private int mult(){
-		forRecurs = Math.min(this.a,this.b);
+		forRecurs = Math.abs( Math.min(this.a,this.b) );
 		while(forRecurs != 0){
 			forSum += Math.max(a, b);  
 			forRecurs--;
