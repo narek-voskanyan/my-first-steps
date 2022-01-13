@@ -1,0 +1,39 @@
+
+import java.util.Scanner;
+public class ArrayTest002 {
+	//Write a Java program to multiply two given integers without using the multiply operator
+	
+	public static void main(String[] args) {
+		
+		Multyplay me = new Multyplay();
+		me.fromUser();
+	}
+
+}
+class Multyplay{
+	Scanner in = new Scanner(System.in);
+	private static int forRecurs = 0;
+	private int a, b;
+	private int forSum;
+	
+	public void fromUser(){
+		System.out.println("Enter first num");
+		this.a = in.nextInt();
+		System.out.println("Enter second num");
+		this.b = in.nextInt();
+		in.close();
+		System.out.println(mult());
+	}
+	
+	private int mult(){
+		forRecurs = Math.min(this.a,this.b);
+		while(forRecurs != 0){
+			forSum += Math.max(a, b);  
+			forRecurs--;
+		}
+		return forSum;
+	}
+}
+
+
+
