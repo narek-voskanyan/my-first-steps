@@ -1,0 +1,23 @@
+
+
+public class ArrayTest001 {
+
+	// Write a Java program to find the numbers greater
+	//than the average of the numbers of a given array
+	public static void main(String[] args) {
+		int[] numArray = {1, 4, 17, 7, 25, 3, 100};
+		
+		double sum = 0.0;
+		for(Integer d: numArray){
+			sum = sum + d;
+		}
+		sum = sum / numArray.length;
+		for(Integer a: numArray){
+			if(a > sum){
+				System.out.println(a);
+			}
+		}
+
+	}
+
+}
