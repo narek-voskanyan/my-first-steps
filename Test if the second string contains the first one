@@ -37,7 +37,7 @@ class TextCkeck{
 		int i = 0;
 		textLength = firstText.length();
 		
-		while(textLength != secondText.length()){
+		while(textLength <= secondText.length()){
 			
 			checkText = secondText.substring(i, textLength);
 			textLength++;
