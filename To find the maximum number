@@ -1,0 +1,45 @@
+
+public class ArrayTest004 {
+
+	//Write a Java program to find the maximum number inside the 
+	//number in the window (size k) at each moving in a given array
+	//of integers with duplicate numbers. Move the window from the start of the array.
+	public static void main(String[] args) {
+
+		NumberChecker find = new NumberChecker();
+		find.findHigherNumber();
+		
+	}
+}
+
+class NumberChecker{
+	
+	private int[] numArray = {7,47,5,46,52,11,123,1,58,9,985,5,33};
+	private int range = 3;
+	private int rightSide = range;
+	private int leftSide = 0;
+	private int[] checkArray = new int[rightSide];
+	private int bigInt = 0;
+	
+	public void findHigherNumber(){
+		
+		while(range <= numArray.length){
+			
+			System.arraycopy(numArray,leftSide, checkArray, 0, rightSide);
+			
+			range++;
+			leftSide++;
+			
+			for(int a: checkArray){
+				if(bigInt < a){
+					bigInt = a;
+					}
+				System.out.print(a + ": ");
+			}
+			
+			System.out.print("The biggest integer is  in this range is " + bigInt + "\n ");
+			bigInt = 0;
+			
+			}
+	}
+}
