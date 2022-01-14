@@ -1,0 +1,57 @@
+import java.util.Scanner;
+public class ArrayTest003 {
+
+	//Write a Java program to accept two string and
+	//test if the second string contains the first one
+	
+	public static void main(String[] args) {
+		TextCkeck myText = new TextCkeck();
+		myText.containsTest();
+		
+		}
+	}
+
+class TextCkeck{
+	
+	
+	private String firstText;
+	private String secondText;
+	private String checkText;
+	private int textLength;
+	boolean check = true;
+	
+	Scanner in = new Scanner(System.in);
+	
+	private void textFromUser(){
+		System.out.println("Enter first text");
+		firstText = in.nextLine();
+		firstText = firstText.trim();
+		System.out.println("Enter second text");
+		secondText = in.nextLine();
+		in.close();
+	}
+	
+	public void containsTest(){
+		textFromUser();
+		
+		int i = 0;
+		textLength = firstText.length();
+		
+		while(textLength != secondText.length()){
+			
+			checkText = secondText.substring(i, textLength);
+			textLength++;
+			i++;
+			
+			if(firstText.equals(checkText)){
+				System.out.println(true);
+				check = false;
+				break;
+				}
+			}
+		
+		if(check){
+			System.out.println(false);
+		}		
+	}	
+}
