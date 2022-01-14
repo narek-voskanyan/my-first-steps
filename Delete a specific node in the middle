@@ -1,0 +1,50 @@
+import java.util.LinkedList;
+import java.util.Scanner;
+
+//Write a Java program to delete a specific node in the middle of a singly linked list
+
+public class LinkedListTest005 {
+
+	
+	public static void main(String[] args) {
+		
+		NumberList myList = new NumberList();
+		myList.checkInt();
+
+	}
+
+}
+class NumberList{
+	
+	Scanner in = new Scanner(System.in);
+	LinkedList<Integer> numbers = new LinkedList<Integer>();
+	private int fromUser;
+	
+	private void listAdd(){
+		numbers.add(10);
+		numbers.add(20);
+		numbers.add(30);
+		numbers.add(40);
+		numbers.add(50);
+	}
+	
+	private void intFromUser(){
+		System.out.println("Enter the integer");
+		fromUser = in.nextInt();
+		in.close();
+	}
+	
+	public void checkInt(){
+		listAdd();
+		intFromUser();
+		int neednumber = numbers.indexOf(fromUser);
+		
+		if(neednumber != -1){
+		numbers.remove(neednumber);	
+		System.out.println(numbers);
+		}else{
+			System.out.println("There is no that number " + numbers);
+			
+		}
+	}
+}
