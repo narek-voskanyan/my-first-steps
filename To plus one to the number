@@ -1,0 +1,60 @@
+
+public class ArrayTest005 {
+	//Write a Java program to plus one to the number of a
+	//given positive numbers represented as an array of digits
+	public static void main(String[] args) {
+	    
+		int[] forUser;
+		Count mytest = new Count();
+		forUser = mytest.getResualt(2);
+		
+		for(int a: forUser){
+		    System.out.print(a + " ");
+		}
+	}
+}
+
+ class Count{
+     
+    private int[] numbers = {9,9,9,9};
+    private int test;
+    private int arrayLength = 0;
+    private int checker;
+    private int[] finishArray;
+    
+    StringBuilder ourInteger = new StringBuilder();
+    
+     private int getTest(int forplus){
+         for(Integer a: numbers){
+			ourInteger.append(a.toString());
+		}
+		
+		String integerinString = ourInteger.toString();
+		 test = Integer.parseInt(integerinString);
+		 return (test += forplus);
+     }
+     
+     
+     
+     public int[] getResualt(int forTest){
+        
+         test = getTest(forTest);
+         checker = test;
+         
+		while(checker != 0){
+		    checker /= 10;
+		    arrayLength++;
+		}
+		
+		checker = test;
+		finishArray = new int[arrayLength];
+        arrayLength -= 1;
+        
+	   	while(arrayLength >= 0){
+		     finishArray[arrayLength] = checker % 10;
+		     checker /= 10;
+		     arrayLength--;
+		}
+		return finishArray;  
+     }  
+ }
