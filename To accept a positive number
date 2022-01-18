@@ -1,0 +1,30 @@
+import java.util.Scanner;
+public class AddNumberElements {
+
+	//Write a Java program to accept a positive number
+	//and repeatedly add all its digits until the result has only one digit
+	public static void main(String[] args) {
+		
+		Scanner in = new Scanner(System.in);
+		System.out.println("Enter the integer");
+		int number = in.nextInt();
+		in.close();
+		
+		forCount test = new forCount();
+		
+		System.out.println("The result is " + test.getResult(number));
+	}
+}
+class forCount{
+	
+	private int finalNamber;
+	
+	public int getResult(int a){
+		
+		while(a != 0){
+			finalNamber += a % 10;
+			a = a /10;
+		}
+		return finalNamber;
+	}
+}
