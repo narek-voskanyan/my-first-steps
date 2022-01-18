@@ -1,0 +1,23 @@
+import java.util.Collections;
+import java.util.LinkedList;
+
+public class SwapLinkedList {
+
+	//Write a Java program to swap every two adjacent nodes of a given linked list
+	public static void main(String[] args) {
+		
+		LinkedList<Integer> number = new LinkedList<Integer>();
+		number.addLast(10);
+		number.addLast(20);
+		number.addLast(30);
+		number.addLast(40);
+		number.addLast(50);
+		
+		for(int i = 0; i < number.size()-1; i++){
+			Collections.swap(number, i, i+1);
+			i++;
+		}
+		
+		System.out.println(number);
+	}
+}
