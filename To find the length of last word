@@ -1,0 +1,22 @@
+
+public class LengthOfWords {
+
+	//Write a Java program to find the length of last word of a given string. 
+	//The string contains upper/lower-case alphabets and empty space characters
+	public static void main(String[] args) {
+		LongestWord me = new LongestWord();
+		System.out.println(me.getWord("I am Narek Voskanyan"));
+
+	}
+
+}
+class LongestWord{
+	String word;
+	int lastWordLength;
+	public int getWord(String fromUser){
+		for(String a: fromUser.split(" ")){
+			lastWordLength = a.length();
+		}
+		return lastWordLength;
+	}
+}
