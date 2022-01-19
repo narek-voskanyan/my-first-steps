@@ -1,0 +1,18 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		String test = "fce5d4b3a21";
+		List<String> letter = new ArrayList<String>();
+		StringBuilder sortletters = new StringBuilder();
+		
+		for(int i =0; i < test.length(); i++){
+			letter.add( test.substring(i, i+1).toUpperCase() );
+		}
+		Collections.sort(letter);
+            for(String a: letter ){
+                sortletters.append(a);
+            }
+		    System.out.println(sortletters.toString());
+	}
+}
