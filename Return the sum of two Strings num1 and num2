@@ -1,0 +1,25 @@
+
+public class SumOfTwoStringNumbers {
+
+	//Write a Java program to Given two non-negative 
+	//integers num1 and num2 represented as string, return the sum of num1 and num2
+	public static void main(String[] args) {
+		StringSum forUser = new StringSum();
+		forUser.getResult();
+	}
+}
+
+class StringSum{
+	private String firstNum = "123";
+	private String secondNum = "456";
+	private int result;
+	
+	private int getSum(){
+		result = Integer.parseInt(firstNum) + Integer.parseInt(secondNum);
+		return result;
+	}
+  
+	public void getResult(){
+		System.out.println(firstNum + " + " + secondNum + " = " + getSum());
+	}
+}
