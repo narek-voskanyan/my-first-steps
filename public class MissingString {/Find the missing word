@@ -1,0 +1,35 @@
+public class MissingString {
+
+	//Write a Java program to find the missing string from two given strings.
+	public static void main(String[] args) {
+		
+		MissinWord forUser = new MissinWord();
+			System.out.println(forUser.getMissingWord());	
+	}
+}
+
+class MissinWord{
+
+	private String first = "Ala bala nica dus cabanica ";
+	private String second = "Ala bala nica  cabanica ";;
+	private String[] firstcheck;
+	private String[] secondcheck;
+	private int arrLength;
+	
+	public String getMissingWord(){
+		
+		firstcheck = first.trim().split(" ");
+		secondcheck = second.trim().split(" ");
+		arrLength = firstcheck.length > secondcheck.length ?  firstcheck.length :  secondcheck.length; 
+		
+		for(int i = 0; i < arrLength; i++){
+			if(firstcheck[i].equals(secondcheck[i])){
+				continue;
+			}else{
+				return "Missing string: " + firstcheck[i];
+			}
+		}
+		return "All is OK ";
+	}
+  
+}
