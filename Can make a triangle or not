@@ -1,0 +1,29 @@
+import java.util.Scanner;
+public class Triangle {
+
+	//Write a Java program to check if three given side lengths (integers) can make a triangle or not
+	public static void main(String[] args) {
+		
+		Scanner in = new Scanner(System.in);
+		System.out.println("Enter the first side");
+		int first = in.nextInt();
+		System.out.println("Enter the second side");
+		int second = in.nextInt();
+		System.out.println("Enter the third side");
+		int third = in.nextInt();
+		in.close();
+		CheckTriangle forUser = new CheckTriangle();
+		System.out.println(forUser.getResult(first, second, third));
+	}
+
+}
+class CheckTriangle{
+	
+	public String getResult(int a, int b, int c){
+		if(a + b > c && a + c > b && c + b > a){
+			return "You can make triangle";
+		}else{
+			return "You can NOT make triangle ";
+		}
+	}
+}
