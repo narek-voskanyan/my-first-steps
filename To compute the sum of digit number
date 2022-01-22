@@ -1,0 +1,54 @@
+import java.util.Scanner;
+public class DigitNumber {
+
+	//Write a Java program to compute the digit number of sum of two given integers
+	public static void main(String[] args) {
+		
+		Scanner in = new Scanner(System.in);
+		int firstInteger;
+		int secondInteger;
+		
+		// Start of User enter
+		to:
+		while(true){
+			System.out.println("Enter the first number from 1 to 1 000 000");
+			firstInteger = in.nextInt();
+			if(firstInteger <= 0 || firstInteger >= 1000000){
+				System.out.println("The numbers out of ring");
+				continue;
+			}
+			while(true){
+				System.out.println("Enter the second number from 1 to 1 000 000");
+				secondInteger = in.nextInt();
+				
+				if(secondInteger <= 0 || secondInteger >= 1000000){
+					System.out.println("The numbers out of ring");
+					continue;
+				}else{
+					break to;
+				}
+			}
+		}
+		in.close();
+		//End of user enter
+		
+		ForCount numCount = new ForCount();
+		System.out.println("There are " + numCount.getResult(firstInteger, secondInteger) + " symbols");
+		
+	}
+}
+
+class ForCount{
+	private int forCount;
+	private int result;
+	
+	public int getResult(int a, int b){
+		forCount = a + b;
+		
+		while(forCount != 0){
+			forCount /= 10;
+			result ++;
+		}
+		return result;
+	}
+}
