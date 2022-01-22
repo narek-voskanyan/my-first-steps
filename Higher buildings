@@ -1,0 +1,27 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+
+public class HigherBuildings {
+
+	//Write a Java program to find heights of the top 
+	//three building in descending order from eight given buildings
+	public static void main(String[] args) {
+		List<Integer> buildings = new ArrayList<Integer>();
+		List<Integer> higherThreeBuildings = new ArrayList<Integer>();
+		buildings.add(25);
+		buildings.add(19);
+		buildings.add(23);
+		buildings.add(45);
+		buildings.add(18);
+		buildings.add(23);
+		buildings.add(24);
+		buildings.add(19);
+		Collections.sort(buildings);
+		higherThreeBuildings = buildings.subList(buildings.size()-3, buildings.size());
+		Collections.sort(higherThreeBuildings, Collections.reverseOrder());
+		System.out.println(higherThreeBuildings);
+
+	}
+}
