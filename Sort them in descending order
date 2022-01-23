@@ -1,0 +1,20 @@
+import java.util.Collections;
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
+public class ReversSort {
+
+	//Write a Java program that accepts six numbers as input and sorts them in descending order.
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		ArrayList<Integer> numbers = new ArrayList<Integer>();
+		int num;
+		for(int i = 1; i <=6; i++){
+			System.out.println("Enter the " + i + " number");
+			num = in.nextInt();
+			numbers.add(num);
+		}
+		Collections.sort(numbers, Collections.reverseOrder());
+		System.out.println(numbers);
+	}
+}
