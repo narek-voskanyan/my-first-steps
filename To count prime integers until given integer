@@ -1,0 +1,63 @@
+import java.util.Scanner;
+public class PrimeNumber {
+
+	// Write a Java program to print the number of prime
+	// numbers which are less than or equal to a given integer.
+	public static void main(String[] args) {
+		FindePrimeInteger forCount = new FindePrimeInteger();
+		
+		System.out.println(forCount.getResult());
+	}
+}
+
+class FindePrimeInteger{
+	
+	Scanner in = new Scanner(System.in);
+	private int fromUser;
+	private int counter;
+	
+	// To get integer from user
+	private int getNumFromUser(){
+		int a = 0;
+		System.out.println("Enter the number");
+		a = in.nextInt();
+		in.close();
+		return a;
+	}
+	
+	// To solve the integer is prime or not
+	private boolean getCounter(int prime){
+		
+		int a = (int) Math.ceil(Math.sqrt(prime));
+		
+		for(int i = 2; i <= a; i++){
+			
+			if(prime % 2 == 0 && prime != 2){
+				return false;
+			}
+			
+			if(prime % i == 0 && prime != 2){
+				return false;
+			}
+		}
+		
+		return true;	
+	}
+  
+	// Count and return sum of prime integers
+	public int getResult(){
+		
+		boolean bool = false;
+		fromUser = getNumFromUser();
+		
+		for(int i = 2; i <= fromUser; i++){
+			
+			bool = getCounter(i);
+			if(bool){
+				counter++;
+				bool = false;
+			}
+		}
+		return counter;
+	}
+}
