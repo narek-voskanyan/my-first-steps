@@ -1,0 +1,91 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class CreateACombinations {
+
+	//Write a Java program that accept a even number (n should be greater than or equal 
+	//to 4 and less than or equal to 50,000, Goldbach number) from the user and create 
+	//a combinations that express the given number as a sum of two prime numbers.
+	//Print the number of combinations.
+	public static void main(String[] args) {
+		SumOfTwoPrimeNumbers forUser = new SumOfTwoPrimeNumbers();
+		ArrayList<String> AllCombinations = new ArrayList<String>(forUser.getResult());
+		for(String a : AllCombinations){
+			System.out.println(a + "\n");
+		}
+	}
+}
+
+class SumOfTwoPrimeNumbers{
+	private int numFromUser;
+	private ArrayList<Integer> primeNum = new ArrayList<Integer>();
+	private ArrayList<String> resulArray = new ArrayList<String>();
+	
+	//Take a num from user
+	private int getNum(){
+		Scanner in = new Scanner(System.in);
+		int a;
+		while(true){
+			System.out.println("Enter the integer from 4 till 50000");
+			a = in.nextInt();
+			if(a >= 4 && a <= 50000){
+				break;
+			}else{
+				System.out.println("This num out of ring");
+				continue;
+			}
+		}
+		return a;
+	}
+	
+	
+	// To solve the integer is prime or not
+	private boolean getCounter(int prime){
+		
+		int a = (int) Math.ceil(Math.sqrt(prime));
+		
+		for(int i = 2; i <= a; i++){
+			
+			if(prime % 2 == 0 && prime != 2){
+				return false;
+			}
+			
+			if(prime % i == 0 && prime != 2){
+				return false;
+			}
+		}
+		
+		return true;	
+	}
+	
+	// Count and return all  prime integers in ArrayList
+	private ArrayList<Integer> getPrimeNumArray(){
+		
+		boolean bool = false;
+		numFromUser = getNum();
+		
+		for(int i = 2; i <= numFromUser; i++){
+			
+			bool = getCounter(i);
+			if(bool){
+				primeNum.add(i);
+				bool = false;
+			}
+		}
+		return primeNum;
+	}
+	
+	//Add result to ArrayList
+	public ArrayList<String> getResult(){
+		getPrimeNumArray();
+		
+		for(int i = 0; i < primeNum.size(); i++ ){
+			for(int j = 0; j < primeNum.size(); j++ ){
+				if(primeNum.get(i)+ primeNum.get(j) == numFromUser){
+					resulArray.add(primeNum.get(i).toString() + " + " + primeNum.get(j).toString() + " = " + numFromUser);
+				}
+			}
+		}
+		return resulArray;
+	}	
+}
