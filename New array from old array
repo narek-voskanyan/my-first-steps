@@ -1,0 +1,21 @@
+public class Main
+{
+	public static void main(String[] args){
+	    int[] number = {5,10,55,69,78,10,55,10,113,10,47,78};
+	   
+	int maxNam = 0;
+	
+	for(int i = 0; i < number.length; i++){
+	    if(number[i] == 10 ){
+	        maxNam = i+1;
+	    }
+	}
+  
+	 int[] newNumbers = new int[maxNam];
+	 System.arraycopy(number, 0 ,newNumbers, 0, maxNam );
+	 
+	for(int a: newNumbers){
+	    System.out.print( a +", ");
+	}
+	}
+}
