@@ -1,0 +1,62 @@
+import java.util.Scanner;
+public class SumOfPrimeNum {
+
+	//Write a Java program to compute the sum of first n given prime numbers
+	public static void main(String[] args) {
+		ComputeSum forUSer = new ComputeSum();
+		System.out.println(forUSer.getResult());
+
+	}
+
+}
+
+class ComputeSum{
+	private int sumofNum;
+	private int forLoop;
+	private int forIteration = 2;
+	private boolean bool;
+	
+	// To get integer from user
+	private int getIntFromUser(){
+		Scanner in = new Scanner(System.in);
+		System.out.println("Enter the integer");
+		int a = in.nextInt();
+		in.close();
+		return a;
+	}
+	
+	// To solve the integer is prime or not
+	private boolean getCounter(int prime){
+		
+		int a = (int) Math.ceil(Math.sqrt(prime));
+		
+		for(int i = 2; i <= a; i++){
+			
+			if(prime % 2 == 0 && prime != 2){
+				return false;
+			}
+			if(prime % i == 0 && prime != 2){
+				return false;
+			}
+		}
+		return true;	
+	} 
+	
+	//To compute the sum of first n given prime numbers and return it 
+	public int getResult(){
+		forLoop = getIntFromUser();
+		
+		while(forLoop !=0){
+			bool = getCounter(forIteration);
+			if(bool){
+				sumofNum += forIteration;
+				forLoop--;
+			}
+
+			bool = false;
+			forIteration++;
+		}
+		
+		return sumofNum;
+	}	
+}
