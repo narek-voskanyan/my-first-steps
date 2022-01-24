@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+
+public class TwoWords {
+
+	//Write a Java program which reads a text (only alphabetical characters and spaces.)
+	//and prints two words. The first one is the word which is arise most frequently in the text.
+	//The second one is the word which has the maximum number of letters
+	public static void main(String[] args) {
+		
+		Scanner in = new Scanner(System.in);
+		System.out.println("Thank you for your comment and your participation." + "\n" + "Input a text in a line:");
+		String[] text  = in.nextLine().split(" ");
+		in.close();
+		String longestWord = "";
+		String frequentlyWord = "";
+		String word ="";
+		int counter = 0;
+		int counterTwo = 0;
+		
+		for(int i = 0; i < text.length; i++){
+			if(longestWord.length() < text[i].length()){
+				longestWord = text[i];
+			}
+		}
+		
+		for(int i = 0; i < text.length; i++){
+			frequentlyWord = text[i];
+			
+			for(int j = 1; j < text.length; j++ ){
+				if(frequentlyWord.equals(text[j]) ){
+					counter++;
+				}
+			}
+			if(counter > counterTwo){
+				word = text[i];
+				counterTwo = counter;
+			}
+			counter = 0;
+		}
+		
+		System.out.println("Most frequent text and the word which has the maximum number of letters:" + "\n" 
+				+ word + " " + longestWord);
+	}
+}
