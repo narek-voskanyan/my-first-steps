@@ -20,8 +20,8 @@ class CountCombination{
 		while(true){
 		System.out.println("Enter the number");
 		 a = in.nextInt();
-		if(a > 4000){
-			System.out.println("The number shoud be smaller or equals 4000");
+		if(a > 4000 || a < 0){
+			System.out.println("The number should be smaller or equals 4000");
 			continue;
 		}else{
 			in.close();
@@ -61,5 +61,5 @@ class CountCombination{
 			}
 		}
 		return counter;
-	}
+	}	
 }
