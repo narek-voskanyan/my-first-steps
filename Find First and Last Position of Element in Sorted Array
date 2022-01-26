@@ -1,0 +1,63 @@
+import java.util.Scanner;
+
+
+public class FirstAndLastPosition {
+
+	//Find First and Last Position of Element in Sorted Array
+	//Given an array of integers nums sorted in non-decreasing 
+	//order, find the starting and ending position of a given target value.
+	//If target is not found in the array, return [-1, -1].
+	
+	public static void main(String[] args) {
+		Solution arrOut = new Solution();
+		int[] numOfInt = arrOut.getResult();
+		for(int a: numOfInt){
+			System.out.print(a + " ");
+		}
+	}
+
+}
+class Solution{
+	private int fromUser;
+	private int arrsize;
+	private int[] num = {5,7,7,8,8,10};
+	
+	private int getNumFromUser(){
+		
+		Scanner in = new Scanner(System.in);
+		System.out.println("Enter the number");
+		int a = in.nextInt();
+		in.close();	
+		return a;
+	}
+	
+	public int[] getResult(){
+		
+		fromUser = getNumFromUser();
+		
+		if(num.length == 0){
+			int[] forOut = {-1,-1};
+			return forOut;
+		}
+		
+		for(int a : num){
+			if(a == fromUser){
+				arrsize++;
+			}
+		}
+		
+		if(arrsize == 0){
+		 int[] forOut = {-1, -1};
+			return forOut;
+		}
+		int[] forOut = new int[arrsize];
+		int j = 0;
+		for(int i = 0; i < num.length; i++){
+			if(num[i] == fromUser){
+				forOut[j] = i;
+				j++;
+			}
+		}
+		return forOut;
+	}
+}
