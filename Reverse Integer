@@ -1,0 +1,45 @@
+
+public class ReverseInteger {
+
+	//Given a signed 32-bit integer x, return x with its digits reversed.
+	//If reversing x causes the value to go outside the signed 32-bit integer range 
+	//[-2^31, 2^31 - 1], then return 0.
+	public static void main(String[] args) {
+		Solution me = new Solution();
+			
+		System.out.println(me.reverse(123456789));
+
+	}
+
+}
+class Solution {
+    public int reverse(int x) {
+     
+       
+        int first = x;
+        long lengthInt = 1;
+        int importNum = 0;
+        long checker = 0; //2147483647
+
+      
+        while(first != 0){
+            lengthInt *=10;
+            first /=10;
+        }
+        lengthInt /=10;
+        
+        first = x;
+        while(first != 0){
+        	checker += (first % 10) * lengthInt;
+        	lengthInt /=10;
+        	first /=10;
+        }
+        if(checker >= 2147483647 || checker <= -2147483648 ){
+            return 0;
+        }
+        importNum = (int) checker;
+        return importNum;
+        
+        
+    }
+}
