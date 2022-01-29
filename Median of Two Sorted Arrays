@@ -1,0 +1,41 @@
+import java.util.ArrayList;
+import java.util.Collections;
+public class MedianOfTwoSortedArrays {
+
+	//Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.
+  //The overall run time complexity should be O(log (m+n)).
+	public static void main(String[] args) {
+		Solutions forMe = new Solutions();
+		int[] first = {1,2};
+		int[] second = {3,4};
+		
+		System.out.println(forMe.findMedianSortedArrays(first, second));
+
+	}
+
+}
+class Solutions {
+    public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+
+
+        double middle = 0;
+        ArrayList<Integer> allArr = new ArrayList<Integer>();
+        for(int i = 0; i <nums1.length; i++ ){
+            allArr.add(nums1[i]);
+        }
+         for(int i = 0; i <nums2.length; i++ ){
+            allArr.add(nums2[i]);
+        }
+        Collections.sort(allArr);
+        
+        if(allArr.size() % 2 != 0){
+            return allArr.get(allArr.size() / 2);
+        }
+        else{
+            double a = allArr.get(allArr.size() /2 -1);
+            double b = allArr.get(allArr.size() /2);
+            middle =  (a+b)/2; 
+            return middle;
+        }
+    }
+}
