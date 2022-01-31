@@ -1,0 +1,25 @@
+class Solution {
+    public int[] plusOne(int[] digits) {
+   
+        String word ="";
+        for(int i = 0; i < digits.length; i++){
+            word = word + new Integer(digits[i]).toString();
+        }
+        
+        int a = Integer.parseInt(word);
+        a += 1;
+        int arrlengt = digits.length;
+        int b = a;
+        int outarrLngth =0;
+        while(b >0){
+            outarrLngth++;
+            b/=10;
+        }
+        int[] outArr = new int[outarrLngth];
+        for(int i =outArr.length-1; i>= 0; i-- ){
+            outArr[i] = a %10;
+            a/=10;
+        }
+        return outArr;
+    }
+}
